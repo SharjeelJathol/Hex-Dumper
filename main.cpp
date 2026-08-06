@@ -47,7 +47,7 @@ int main(int argc, char* argv[]){
                     std::cout << " ";
                 }
                 if(i>=bytesRead)
-                    std::cout << "  ";
+                    std::cout << "   ";
                 else
                     std::cout << std::hex << std::setfill('0') << std::setw(2) << (int)buffer[i] << " ";
                 
@@ -55,7 +55,7 @@ int main(int argc, char* argv[]){
             std::cout << "|";
             for(int i=0; i<16; i++){
                 // ASCII codes 32 to 126 are printable characters
-                if(buffer[i] >= 32 && buffer[i] <= 126){
+                if(buffer[i] >= 32 && buffer[i] <= 126 && i<bytesRead){
                     std::cout << buffer[i];
                 }else{
                     std::cout << ".";

@@ -25,11 +25,13 @@ int main(int argc, char* argv[]){
                     printf(" ");
                 if(i < bytesRead)
                     printf("%02x ", buffer[i]);
+                else
+                    printf("   ");
             }
             printf(" |");
 
             for(int i=0; i<16; i++){
-                if(buffer[i] >= 32 && buffer[i] <= 126){
+                if(buffer[i] >= 32 && buffer[i] <= 126 && i<bytesRead){
                     printf("%c", buffer[i]);
                 }
                 else
