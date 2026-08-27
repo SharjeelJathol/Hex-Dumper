@@ -21,14 +21,14 @@ int main(int argc, char* argv[]){
             printf("%08x  ", offset);
 
             for(int i=0; i<16; i++){
-                if(i == 7)
+                if(i == 8)
                     printf(" ");
                 if(i < bytesRead)
                     printf("%02x ", buffer[i]);
                 else
                     printf("   ");
             }
-            printf(" |");
+            printf("  |");
 
             for(int i=0; i<16; i++){
                 if(buffer[i] >= 32 && buffer[i] <= 126 && i<bytesRead){

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <cstdint>
 
 int main(int argc, char* argv[]){
     // Check if a filename is provided
@@ -43,7 +44,7 @@ int main(int argc, char* argv[]){
 
             std::cout << std::hex << std::setfill('0') << std::setw(8) << offset << std::setfill('0') << std::dec << "  ";
             for(int i=0; i<16; i++){
-                if(i==7){
+                if(i==8){
                     std::cout << " ";
                 }
                 if(i>=bytesRead)
@@ -52,7 +53,7 @@ int main(int argc, char* argv[]){
                     std::cout << std::hex << std::setfill('0') << std::setw(2) << (int)buffer[i] << " ";
                 
             }
-            std::cout << "|";
+            std::cout << " |";
             for(int i=0; i<16; i++){
                 // ASCII codes 32 to 126 are printable characters
                 if(buffer[i] >= 32 && buffer[i] <= 126 && i<bytesRead){
