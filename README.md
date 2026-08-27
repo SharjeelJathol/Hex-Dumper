@@ -44,3 +44,29 @@ File handling in C++
     file.put(char);
 4. Close the file
     file.close()
+
+Printing hex values:
+C Language
+    // Basic lowercase and uppercase hex
+    printf("Lowercase: %x\n", num); // ff
+    printf("Uppercase: %X\n", num); // FF
+
+    // With '0x' or '0X' prefix automatically added
+    printf("With prefix: %#x\n", num); // 0xff
+
+    // Padded with leading zeros (8 characters wide)
+    printf("Padded: 0x%08X\n", num); // 0x000000FF
+
+CPP Language
+    // Basic hex output, must tell by std::hex to print hexadecimal
+    std::cout << "Hex: " << std::hex << num << std::endl; // ff
+
+    // Uppercase with 0x prefix and zero padding
+    std::cout << "Formatted: 0x" 
+              << std::uppercase 
+              << std::setw(8) 
+              << std::setfill('0') 
+              << num << std::endl; // 0x000000FF
+
+    // Resetting the stream state back to decimal
+    std::cout << std::dec << std::nouppercase; 
